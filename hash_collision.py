@@ -77,8 +77,6 @@ def hash_collision(k):
     while y_hash_binary.endswith(x_hash_binary[len(x_hash_binary)-k:]) == False:
         x = str(random()).encode('utf-8')
         y = str(random()).encode('utf-8')
-        print(x)
-        print(y)
 
         x_hash_binary = bin(int(hashlib.sha256(x).hexdigest(), 16))
         y_hash_binary = bin(int(hashlib.sha256(y).hexdigest(), 16))
