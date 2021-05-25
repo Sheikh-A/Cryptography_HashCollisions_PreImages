@@ -55,3 +55,34 @@
 
 # if __name__ == "__main__":
 #     main()
+
+import hashlib
+import os
+from hashlib import sha256
+import random
+
+def hash_collision(k):
+
+    if not isinstance(k,int):
+        print( "hash_collision expects an integer" )
+        return( b'\x00',b'\x00' )
+    if k < 0:
+        print( "Specify a positive number of bits" )
+        return( b'\x00',b'\x00' )
+
+    #Collision finding code goes here
+    x = b'\x00'
+    y = b'\x00'
+    x = str(random.random()).encode('utf-8')
+    x_bits = bin(int(sha256(x).hexdigest(),16))
+    i = 500
+    while (True):
+        y = str(i).encode('utf-8')
+        y_bits = bin(int(sha256(y).hexdigest(),16))
+        if x_bits[-k:] == y_bits[-k:]:
+            break
+        i+=1
+    return( x, y)
+
+# a = int(input ("input an integer: "))
+# print (hash_collision(a))
