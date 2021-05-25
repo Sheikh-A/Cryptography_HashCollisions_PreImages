@@ -80,8 +80,6 @@ def hash_collision(k):
 
         x_hash_binary = bin(int(hashlib.sha256(x).hexdigest(), 16))
         y_hash_binary = bin(int(hashlib.sha256(y).hexdigest(), 16))
-        print(x_hash_binary)
-        print(y_hash_binary)
 
     return( x, y )
 
