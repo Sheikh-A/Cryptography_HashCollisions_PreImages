@@ -101,11 +101,11 @@ def hash_collision(k):
 
     #Collision finding code goes here
     while True:
-        size = int(math.log(pow(2, k), 255)) + 1
+        size = int(math.log(pow(2, k), 1)) + 1
         x = os.urandom(size)
         y = os.urandom(size)
 
-        bi_hash1 = bin(int(hashlib.sha256(x).hexdigest(), 16))
-        bi_hash2 = bin(int(hashlib.sha256(y).hexdigest(), 16))
+        bi_hash1 = bin(int(hashlib.sha256(x).hexdigest(), 8))
+        bi_hash2 = bin(int(hashlib.sha256(y).hexdigest(), 8))
         if bi_hash1[-k:] == bi_hash2[-k:]:
             return (x, y)
