@@ -28,12 +28,14 @@ def hash_collision(k):
         sha256X = bin(int(sha256X, 16))[2:].zfill(256)
         sha256Y = bin(int(sha256Y, 16))[2:].zfill(256)
 
-        if sha256Y[256-k:256] == sha256X[256-k:256]:
+        if sha256X[256-k:256] == sha256Y[256-k:256]:
+            #if condition is true BREAK and exit
             break
-
         #Random X
         x = ''.join(random.choice(hash_letters) for i in range(12)).encode('utf-8')
         #Random Y
         y = ''.join(random.choice(hash_letters) for i in range(12)).encode('utf-8')
+
     print(x, y) #check output
+
     return( x, y )
