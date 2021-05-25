@@ -14,7 +14,10 @@ def hash_collision(k):
 
     print(k) #Check to see what K number if
     #Collision finding code goes here
-    hash_letters = string.ascii_letters + string.digits + string.punctuation
+    hash_digits = string.digits
+    hash_punc = string.punctuation
+    hash_abc = string.ascii_letters
+    hash_letters = hash_digits + hash_punc + hash_abc
     print(hash_letters)
 
     x = ''.join(random.choice(hash_letters) for i in range(12)).encode('utf-8')
