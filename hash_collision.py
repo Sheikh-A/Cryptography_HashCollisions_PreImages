@@ -1,5 +1,6 @@
 import string
 import random
+#https://docs.python.org/3/library/random.html
 import hashlib
 from hashlib import sha256
 
